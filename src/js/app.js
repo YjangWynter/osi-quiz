@@ -197,7 +197,7 @@ var Quiz = function () {
         resultBox.appendChild(`<hr class="my-4"><p class="text-center">Schedule a consultation with Rahsaan Graham to learn more about your program and many others. Be sure to screenshot your result!</p><p class="text-center"><a class="btn btn-primary btn-lg" href="mailto:Rahsaan.Graham@ucf.edu?subject=AmeriCorps Appointment&body=I got ${ORGINFO[resultList[0]].name} as my result. Could I schedule an appointment to learn more about it and my other options to get involved?"><strong>Schedule Consultation</strong></a></p>`);
         //Animated scroll
         $("body, html").animate({
-            scrollTop: (($resultBox).offset().top - 25) //25px for visual padding
+            scrollTop: ((resultBox).offset().top - 25) //25px for visual padding
         }, 500);
     }
 
@@ -209,7 +209,7 @@ var Quiz = function () {
         document.querySelectorAll(".quiz-choice").addEventListener("click", function () {
             let choice = this;
             let question = choice.closest("ul[data-quiz-question]");
-            self._selectAnswer($choice, $question);
+            self._selectAnswer(choice, question);
             if (self._isComplete()) {
                 self._showResult();
                 return;
