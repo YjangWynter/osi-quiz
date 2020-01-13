@@ -7,6 +7,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-147457642-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
+
         function gtag() {
             dataLayer.push(arguments);
         }
@@ -20,17 +21,18 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/styles/vendor/bootstrap.min.css" type="text/css">
-    
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css" type="text/css">
+
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/styles/buzzstyle.css" type="text/css">
+    <link rel="stylesheet" href="src/css/style.css" type="text/css">
 
     <title>Americorps Volunteer Quiz</title>
 </head>
+
 <body>
     <!-- Top visual -->
     <div class="top-bar-visual">
@@ -47,17 +49,19 @@
                 <!-- Title/Description -->
                 <div class="title-box py-2">
                     <div class="title">
-                        <p class="h1 my-2 pt-4 pb-2" style="font-weight: bold">Graduating?<br> Considering a gap year?<br> Take the next step with AmeriCorps!</p>
+                        <p class="h1 my-2 pt-4 pb-2" style="font-weight: bold">Graduating?<br> Considering a gap
+                            year?<br> Take the next step with AmeriCorps!</p>
                     </div>
                     <div class="description my-2 pb-4">
                         <p>Looking to make a positive impact? AmeriCorps is here to help you!
-                        Take the quiz below to find out how you can use your skills and passions to make a difference:</p>
+                            Take the quiz below to find out how you can use your skills and passions to make a
+                            difference:</p>
                     </div>
                 </div>
 
                 <!-- Question #1 -->
                 <div style="background: #012c7b;color: white;" class="jumbotron" id="1">
-                    <p class="display-4" style="text-align: center; font-weight: bold;">Pick a field of interest:</p>
+                    <p class="display-4" style="text-align: center; font-weight: bold;">Which one are you?</p>
                 </div>
 
                 <ul class="list unstyled-list px-0" data-quiz-question="1" style="list-style: none;">
@@ -67,10 +71,10 @@
                         <div class="col-6">
                             <li role="button" class="card quiz-choice" data-choice-value="a">
                                 <div class="zoom-effect">
-                                    <img class="card-img-top" src="img/teach.png">
+                                    <img class="card-img-top" src="https://via.placeholder.com/700x500">
                                 </div>
                                 <div class="card-body">
-                                    Education
+                                    Morning person
                                 </div>
                             </li>
                         </div>
@@ -79,10 +83,51 @@
                         <div class="col-6">
                             <li role="button" class="card quiz-choice" data-choice-value="b">
                                 <div class="zoom-effect">
-                                    <img class="card-img-top" src="img/engi.png">
+                                    <img class="card-img-top" src="https://via.placeholder.com/700x500">
                                 </div>
                                 <div class="card-body">
-                                    STEM Fields
+                                    Night person
+                                </div>
+                            </li>
+                        </div>
+
+                    </div>
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="row justify-content-center my-4">
+            <div class="col-xs-12 col-lg-8">
+
+                <!-- Question #2 -->
+                <div style="background: #95200f;color: white;" class="jumbotron" id="2">
+                    <p class="display-4" style="text-align: center; font-weight: bold;">Pick an area of interest</p>
+                </div>
+
+                <ul class="list unstyled-list px-0" data-quiz-question="2" style="list-style: none;">
+                    <div class="row mb-4">
+
+                        <!-- Choice #1 -->
+                        <div class="col-6">
+                            <li role="button" class="card quiz-choice" data-choice-value="a">
+                                <div class="zoom-effect">
+                                    <img class="card-img-top" src="https://via.placeholder.com/700x500">
+                                </div>
+                                <div class="card-body">
+                                    Medicine or Health
+                                </div>
+                            </li>
+                        </div>
+
+                        <!-- Choice #2 -->
+                        <div class="col-6">
+                            <li role="button" class="card quiz-choice" data-choice-value="b">
+                                <div class="zoom-effect">
+                                    <img class="card-img-top" src="https://via.placeholder.com/700x500">
+                                </div>
+                                <div class="card-body">
+                                    Public Relations or Marketing
                                 </div>
                             </li>
                         </div>
@@ -94,10 +139,10 @@
                         <div class="col-6">
                             <li role="button" class="card quiz-choice" data-choice-value="c">
                                 <div class="zoom-effect">
-                                    <img class="card-img-top" src="img/smm.png">
+                                    <img class="card-img-top" src="https://via.placeholder.com/700x500">
                                 </div>
                                 <div class="card-body">
-                                    Public Relations
+                                    Social Science
                                 </div>
                             </li>
                         </div>
@@ -106,10 +151,10 @@
                         <div class="col-6">
                             <li role="button" class="card quiz-choice" data-choice-value="d">
                                 <div class="zoom-effect">
-                                    <img class="card-img-top" src="img/diplomat.png">
+                                    <img class="card-img-top" src="https://via.placeholder.com/700x500">
                                 </div>
                                 <div class="card-body">
-                                    Politics or Diplomacy
+                                    STEM Fields
                                 </div>
                             </li>
                         </div>
@@ -121,30 +166,134 @@
                         <div class="col-6">
                             <li role="button" class="card quiz-choice" data-choice-value="e">
                                 <div class="zoom-effect">
-                                    <img class="card-img-top" src="img/doctor.png">
+                                    <img class="card-img-top" src="https://via.placeholder.com/700x500">
                                 </div>
                                 <div class="card-body">
-                                    Medicine
+                                    Arts & Humanities
                                 </div>
                             </li>
                         </div>
-
                     </div>
-
                 </ul>
-
             </div>
         </div>
 
         <div class="row justify-content-center my-4">
             <div class="col-xs-12 col-lg-8">
 
-                <!-- Question #2 -->
-                <div style="background: #95200f;color: white;" class="jumbotron" id="2">
+                <!-- Question #3 -->
+                <div style="background: #000;color: white;" class="jumbotron" id="3">
+                    <p class="display-4" style="text-align: center; font-weight: bold;">Where are most of your classes
+                        held?</p>
+                </div>
+
+                <ul class="list unstyled-list px-0" data-quiz-question="3" style="list-style: none;">
+                    <div class="row mb-4">
+
+                        <!-- Choice #1 -->
+                        <div class="col-6">
+                            <li role="button" class="card quiz-choice" data-choice-value="a">
+                                <div class="zoom-effect">
+                                    <img class="card-img-top" src="https://via.placeholder.com/700x500">
+                                </div>
+                                <div class="card-body">
+                                    Rosen campus
+                                </div>
+                            </li>
+                        </div>
+
+                        <!-- Choice #2 -->
+                        <div class="col-6">
+                            <li role="button" class="card quiz-choice" data-choice-value="b">
+                                <div class="zoom-effect">
+                                    <img class="card-img-top" src="https://via.placeholder.com/700x500">
+                                </div>
+                                <div class="card-body">
+                                    Main Campus
+                                </div>
+                            </li>
+                        </div>
+
+                    </div>
+                    <div class="row mb-4">
+
+                        <!-- Choice #3 -->
+                        <div class="col-6">
+                            <li role="button" class="card quiz-choice" data-choice-value="c">
+                                <div class="zoom-effect">
+                                    <img class="card-img-top" src="https://via.placeholder.com/700x500">
+                                </div>
+                                <div class="card-body">
+                                    UCF Downtown
+                                </div>
+                            </li>
+                        </div>
+
+                        <!-- Choice #4 -->
+                        <div class="col-6">
+                            <li role="button" class="card quiz-choice" data-choice-value="d">
+                                <div class="zoom-effect">
+                                        <img class="card-img-top" src="https://via.placeholder.com/700x500">
+                                    </div>
+                                <div class="card-body">
+                                    Regional
+                                </div>
+                            </li>
+                        </div>
+
+                    </div>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row justify-content-center my-4">
+            <div class="col-xs-12 col-lg-8">
+
+                <!-- Question #4 -->
+                <div class="jumbotron" style="background: #012c7b; color: white;" id="4">
+                    <p class="display-4" style="text-align: center; font-weight: bold;">Which one are you?</p>
+                </div>
+
+                <ul class="list unstyled-list px-0" data-quiz-question="4" style="list-style: none;">
+                    <div class="row mb-4">
+
+                        <!-- Choice #1 -->
+                        <div class="col-6">
+                            <li role="button" class="card quiz-choice" data-choice-value="a">
+                                <div class="zoom-effect">
+                                    <img class="card-img-top" src="https://via.placeholder.com/700x500">
+                                </div>
+                                <div class="card-body">
+                                    Undergraduate Student
+                                </div>
+                            </li>
+                        </div>
+
+                        <!-- Choice #2 -->
+                        <div class="col-6">
+                            <li role="button" class="card quiz-choice" data-choice-value="b">
+                                <div class="zoom-effect">
+                                        <img class="card-img-top" src="https://via.placeholder.com/700x500">
+                                    </div>
+                                <div class="card-body">
+                                    Graduate Student
+                                </div>
+                            </li>
+                        </div>
+                    </div>
+                    </ul>
+                </div>
+            </div>
+
+        <div class="row justify-content-center my-4">
+            <div class="col-xs-12 col-lg-8">
+
+                <!-- Question #5 -->
+                <div class="jumbotron" style="background: #012c7b; color: white;" id="5">
                     <p class="display-4" style="text-align: center; font-weight: bold;">Which describes you?</p>
                 </div>
 
-                <ul class="list unstyled-list px-0" data-quiz-question="2" style="list-style: none;">
+                <ul class="list unstyled-list px-0" data-quiz-question="5" style="list-style: none;">
                     <div class="row mb-4">
 
                         <!-- Choice #1 -->
@@ -231,26 +380,91 @@
 
             </div>
         </div>
-
+        <div class="row justify-content-center my-4">
+                <div class="col-xs-12 col-lg-8">
+    
+                    <!-- Question #6 -->
+                    <div class="jumbotron" style="background: #012c7b; color: white;" id="6">
+                        <p class="display-4" style="text-align: center; font-weight: bold;">Where do you thrive?</p>
+                    </div>
+    
+                    <ul class="list unstyled-list px-0" data-quiz-question="6" style="list-style: none;">
+                        <div class="row mb-4">
+    
+                            <!-- Choice #1 -->
+                            <div class="col-6">
+                                <li role="button" class="card quiz-choice" data-choice-value="a">
+                                    <div class="zoom-effect">
+                                    <img class="card-img-top" src="/img/office.png">
+                                    </div>
+                                    <div class="card-body">
+                                        Library, lab, or office
+                                    </div>
+                                </li>
+                            </div>
+    
+                            <!-- Choice #2 -->
+                            <div class="col-6">
+                                <li role="button" class="card quiz-choice" data-choice-value="b">
+                                    <div class="zoom-effect">
+                                            <img class="card-img-top" src="img/outdoors.png">
+                                        </div>
+                                    <div class="card-body">
+                                        The Great Outdoors
+                                    </div>
+                                </li>
+                            </div>
+    
+                        </div>
+                        <div class="row mb-4">
+    
+                            <!-- Choice #3 -->
+                            <div class="col-6">
+                                <li role="button" class="card quiz-choice" data-choice-value="c">
+                                    <div class="zoom-effect">
+                                            <img class="card-img-top" src="https://via.placeholder.com/700x500">
+                                        </div>
+                                    <div class="card-body">
+                                        Being around others
+                                    </div>
+                                </li>
+                            </div>
+    
+                            <!-- Choice #4 -->
+                            <div class="col-6">
+                                <li role="button" class="card quiz-choice" data-choice-value="d">
+                                    <div class="zoom-effect">
+                                        <img class="card-img-top" src="img/onthego.png">
+                                    </div>
+                                    <div class="card-body">
+                                        On the go 
+                                    </div>
+                                </li>
+                            </div>
+    
+                        </div>
+                    </ul>
+                </div>
+            </div>
         <div class="row justify-content-center my-4">
             <div class="col-xs-12 col-lg-8">
 
-                <!-- Question #3 -->
-                <div style="background: #000;color: white;" class="jumbotron" id="3">
-                    <p class="display-4" style="text-align: center; font-weight: bold;">Donate $1 million:</p>
+                <!-- Question #6 -->
+                <div class="jumbotron" style="background: #012c7b; color: white;" id="7">
+                    <p class="display-4" style="text-align: center; font-weight: bold;">What would you like to do?</p>
                 </div>
 
-                <ul class="list unstyled-list px-0" data-quiz-question="3" style="list-style: none;">
+                <ul class="list unstyled-list px-0" data-quiz-question="7" style="list-style: none;">
                     <div class="row mb-4">
 
                         <!-- Choice #1 -->
                         <div class="col-6">
                             <li role="button" class="card quiz-choice" data-choice-value="a">
                                 <div class="zoom-effect">
-                                    <img class="card-img-top" src="img/environment.png">
+                                        <img class="card-img-top" src="https://via.placeholder.com/700x500">
                                 </div>
                                 <div class="card-body">
-                                    Save the environment
+                                Service
                                 </div>
                             </li>
                         </div>
@@ -259,10 +473,10 @@
                         <div class="col-6">
                             <li role="button" class="card quiz-choice" data-choice-value="b">
                                 <div class="zoom-effect">
-                                    <img class="card-img-top" src="img/disaster.png">
+                                        <img class="card-img-top" src="https://via.placeholder.com/700x500">
                                 </div>
                                 <div class="card-body">
-                                    Disaster Relief
+                                    Event planning
                                 </div>
                             </li>
                         </div>
@@ -274,10 +488,10 @@
                         <div class="col-6">
                             <li role="button" class="card quiz-choice" data-choice-value="c">
                                 <div class="zoom-effect">
-                                    <img class="card-img-top" src="img/youth.png">
+                                        <img class="card-img-top" src="https://via.placeholder.com/700x500">
                                 </div>
                                 <div class="card-body">
-                                    Youth programs
+                                    Fundraising or philanthropy
                                 </div>
                             </li>
                         </div>
@@ -286,10 +500,10 @@
                         <div class="col-6">
                             <li role="button" class="card quiz-choice" data-choice-value="d">
                                 <div class="zoom-effect">
-                                    <img class="card-img-top" src="img/clinic.png">
+                                        <img class="card-img-top" src="https://via.placeholder.com/700x500">
                                 </div>
                                 <div class="card-body">
-                                    Build a health clinic
+                                    Training, research and/or development
                                 </div>
                             </li>
                         </div>
@@ -301,10 +515,22 @@
                         <div class="col-6">
                             <li role="button" class="card quiz-choice" data-choice-value="e">
                                 <div class="zoom-effect">
-                                    <img class="card-img-top" src="img/sj.png">
+                                        <img class="card-img-top" src="https://via.placeholder.com/700x500">
                                 </div>
                                 <div class="card-body">
-                                    Fight for social justice
+                                    Entertainment industry
+                                </div>
+                            </li>
+                        </div>
+
+                        <!-- Choice #6 -->
+                        <div class="col-6">
+                            <li role="button" class="card quiz-choice" data-choice-value="f">
+                                <div class="zoom-effect">
+                                        <img class="card-img-top" src="https://via.placeholder.com/700x500">
+                                </div>
+                                <div class="card-body">
+                                    Digital Media
                                 </div>
                             </li>
                         </div>
@@ -318,23 +544,22 @@
 
         <div class="row justify-content-center my-4">
             <div class="col-xs-12 col-lg-8">
-
-                <!-- Question #4 -->
-                <div class="jumbotron" style="background: #012c7b; color: white;" id="4">
-                    <p class="display-4" style="text-align: center; font-weight: bold;">Where do you thrive?</p>
+                <!-- Question #1 -->
+                <div style="background: #012c7b;color: white;" class="jumbotron" id="8">
+                    <p class="display-4" style="text-align: center; font-weight: bold;">Pick a hobby</p>
                 </div>
 
-                <ul class="list unstyled-list px-0" data-quiz-question="4" style="list-style: none;">
+                <ul class="list unstyled-list px-0" data-quiz-question="8" style="list-style: none;">
                     <div class="row mb-4">
 
                         <!-- Choice #1 -->
                         <div class="col-6">
                             <li role="button" class="card quiz-choice" data-choice-value="a">
                                 <div class="zoom-effect">
-                                    <img class="card-img-top" src="img/classroom.png">
+                                        <img class="card-img-top" src="https://via.placeholder.com/700x500">
                                 </div>
                                 <div class="card-body">
-                                    In the classroom
+                                    Design and Illustration
                                 </div>
                             </li>
                         </div>
@@ -343,10 +568,10 @@
                         <div class="col-6">
                             <li role="button" class="card quiz-choice" data-choice-value="b">
                                 <div class="zoom-effect">
-                                    <img class="card-img-top" src="img/outdoors.png">
+                                        <img class="card-img-top" src="https://via.placeholder.com/700x500">
                                 </div>
                                 <div class="card-body">
-                                    The Great Outdoors
+                                    Music or podcasts
                                 </div>
                             </li>
                         </div>
@@ -358,10 +583,10 @@
                         <div class="col-6">
                             <li role="button" class="card quiz-choice" data-choice-value="c">
                                 <div class="zoom-effect">
-                                    <img class="card-img-top" src="img/office.png">
+                                        <img class="card-img-top" src="https://via.placeholder.com/700x500">
                                 </div>
                                 <div class="card-body">
-                                    Hidden in the office
+                                Videos or photography 
                                 </div>
                             </li>
                         </div>
@@ -370,10 +595,134 @@
                         <div class="col-6">
                             <li role="button" class="card quiz-choice" data-choice-value="d">
                                 <div class="zoom-effect">
-                                    <img class="card-img-top" src="img/clinic.png">
+                                        <img class="card-img-top" src="https://via.placeholder.com/700x500">
                                 </div>
                                 <div class="card-body">
-                                    At the clinic
+                                    Social media content
+                                </div>
+                            </li>
+                        </div>
+
+                    </div>
+                    <div class="row mb-4">
+                        <!-- Choice #5 -->
+                        <div class="col-6">
+                            <li role="button" class="card quiz-choice" data-choice-value="e">
+                                <div class="zoom-effect">
+                                    <img class="card-img-top" src="https://via.placeholder.com/700x500">
+                                    </div>
+                                <div class="card-body">
+                                    Concerts, music festivals, or arts and crafts                                </div>
+                            </li>
+                        </div>
+                    <div class="col-6">
+                            <li role="button" class="card quiz-choice" data-choice-value="f">
+                                <div class="zoom-effect">
+                                <img class="card-img-top" src="https://via.placeholder.com/700x500">
+                                </div>
+                                <div class="card-body">
+                                Being part of a club or learning new things                              </div>
+                            </li>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <!-- Choice #5 -->
+                        <div class="col-6">
+                            <li role="button" class="card quiz-choice" data-choice-value="g">
+                                <div class="zoom-effect">
+                                <img class="card-img-top" src="https://via.placeholder.com/700x500">
+                                </div>
+                                <div class="card-body">
+                                Being outside, playing games, by the pool, or watching movies                               </div>
+                            </li>
+                        </div>
+                    <div class="col-6">
+                            <li role="button" class="card quiz-choice" data-choice-value="h">
+                                <div class="zoom-effect">
+                                <img class="card-img-top" src="https://via.placeholder.com/700x500">
+                                </div>
+                                <div class="card-body">
+                                Giving back
+                            </div>
+                            </li>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-4">
+                        <!-- Choice #5 -->
+                        <div class="col-6">
+                            <li role="button" class="card quiz-choice" data-choice-value="i">
+                                <div class="zoom-effect">
+                                <img class="card-img-top" src="https://via.placeholder.com/700x500">
+                                </div>
+                                <div class="card-body">
+                                Being a part of campus traditions                               </div>
+                            </li>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row justify-content-center my-4">
+            <div class="col-xs-12 col-lg-8">
+
+                <!-- Question #2 -->
+                <div style="background: #95200f;color: white;" class="jumbotron" id="9">
+                    <p class="display-4" style="text-align: center; font-weight: bold;">What is your availability like?</p>
+                </div>
+
+                <ul class="list unstyled-list px-0" data-quiz-question="9" style="list-style: none;">
+                    <div class="row mb-4">
+
+                        <!-- Choice #1 -->
+                        <div class="col-6">
+                            <li role="button" class="card quiz-choice" data-choice-value="a">
+                                <div class="zoom-effect">
+                                <img class="card-img-top" src="https://via.placeholder.com/700x500">
+                                </div>
+                                <div class="card-body">
+                                    Weekly
+                                </div>
+                            </li>
+                        </div>
+
+                        <!-- Choice #2 -->
+                        <div class="col-6">
+                            <li role="button" class="card quiz-choice" data-choice-value="b">
+                                <div class="zoom-effect">
+                                <img class="card-img-top" src="https://via.placeholder.com/700x500">
+                                </div>
+                                <div class="card-body">
+                                    Bi-weekly
+                                </div>
+                            </li>
+                        </div>
+
+                    </div>
+                    <div class="row mb-4">
+
+                        <!-- Choice #3 -->
+                        <div class="col-6">
+                            <li role="button" class="card quiz-choice" data-choice-value="c">
+                                <div class="zoom-effect">
+                                <img class="card-img-top" src="https://via.placeholder.com/700x500">
+                                </div>
+                                <div class="card-body">
+                                    Monthly
+                                </div>
+                            </li>
+                        </div>
+
+                        <!-- Choice #4 -->
+                        <div class="col-6">
+                            <li role="button" class="card quiz-choice" data-choice-value="d">
+                                <div class="zoom-effect">
+                                <img class="card-img-top" src="https://via.placeholder.com/700x500">
+                                </div>
+                                <div class="card-body">
+                                    1-2 weeks per semester
                                 </div>
                             </li>
                         </div>
@@ -385,30 +734,15 @@
                         <div class="col-6">
                             <li role="button" class="card quiz-choice" data-choice-value="e">
                                 <div class="zoom-effect">
-                                    <img class="card-img-top" src="img/church.png">
+                                <img class="card-img-top" src="https://via.placeholder.com/700x500">
                                 </div>
                                 <div class="card-body">
-                                    Church
+                                    Whenever
                                 </div>
                             </li>
                         </div>
-
-                        <!-- Choice #6 -->
-                        <div class="col-6">
-                            <li role="button" class="card quiz-choice" data-choice-value="f">
-                                <div class="zoom-effect">
-                                    <img class="card-img-top" src="img/onthego.png">
-                                </div>
-                                <div class="card-body">
-                                    On the go!
-                                </div>
-                            </li>
-                        </div>
-
                     </div>
-
                 </ul>
-
             </div>
         </div>
 
@@ -428,13 +762,14 @@
             <div class="row justify-content-center">
                 <div class="col-xs-12 col-lg-8">
                     <div class="footer-copyright">
-                        <span class="text-muted">Built by <a href="https://github.com/NickEvans">Nick Evans</a> & <a href="https://yjangwynter.com/">Yjang Wynter</a></span>
+                        <span class="text-muted">Built by <a href="https://github.com/NickEvans">Nick Evans</a> & <a
+                                href="https://yjangwynter.com/">Yjang Wynter</a></span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-   
+
     <!---Online Dependencies-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
@@ -447,10 +782,10 @@
     </script>
     <!-- JQuery -->
     <script src="js/vendor/jquery.min.js"></script>
-    
+
     <!-- Buzzfeed Quiz Javascript -->
-    <script src="js/quizselect.min.js"></script>
-    
+    <script src="src/js/quiz.js"></script>
+
 
 </body>
 

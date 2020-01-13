@@ -22,6 +22,7 @@ const ORGINFO = [
 
     {
         name: "National Health Corps",
+        
         info: "National Health Corps has worked to expand access to health care and health education in under-served communities for more than 20 years. For 10 ½ months, members will work to provide an array of health screenings and wellness education to those in need in addition for ways individuals in communities can find resources and benefits to promote a healthy, sustainable life. The volunteer members also receive benefits such as childcare assistance, student loan forbearance, health coverage, a $13,992 stipend over the course of their service, and a $5920.00 education award upon completion of their term. A great fit for individuals who are interested addressing health disparities with a perspective informed by their experience in low-income communities and systemic challenges of poverty and racism.",
         website: "http://nationalhealthcorps.org/"
     },
