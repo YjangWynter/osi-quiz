@@ -1,4 +1,8 @@
-# OSI Department Quiz
-Written by @YjangWynter & @NickEvans
-[Link](https://docs.google.com/document/d/1wsFap699kCFATSzhfLaGSCj1LCJXZaVbymKZJGBuAP8/edit) to the docs that started it all
-Copied much of the code from the VUCF Volunteer Quiz, with a rewrite in tailwindcss for styling
+# volunteer-quiz
+Buzzfeed-style interactive quiz to connect UCF students with AmeriCorps volunteer opportunities that match their personality and interests and drive engagement with students. Built for the Volunteer UCF page of the UCF Office of Student Involvement website.
+
+Live demo: https://pensive-brahmagupta-5a854d.netlify.com
+
+Code by Nick Evans & Yjang Wynter
+
+Illustrations by Nick Evans
