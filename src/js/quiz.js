@@ -129,36 +129,49 @@ var Quiz = function () {
     this._calcResult = function () {
         // orgsAnswers[0] = Late Knights
         const lk = new Array(["b"], ["a", "b", "c", "d", "e"], ["b", "c"], ["a"], ["a", "c", "f"], ["c", "d"], ["b"], ["g"], ["c"]);
+
         // orgsAnswers[1] = Knights of the Round Table
         const kort = new Array(["a", "b", "c", "d", "e"], ["a", "b", "c", "d", "e"], ["b"], ["b"], ["a", "e", "f"], ["a, c, d"], ["b", "d"], ["f"], ["a", "b", "c", "d", "e"]);
+
         // orgsAnswers[2] = Knight-Thon
-        const kt = new Array(["a", "b", "c", "d", "e"], ["a", "b", "c", "d", "e"], ["b,d"], ["a"], ["a", "b", "e"], ["b", "c", "d"] + ["a", "c"], ["h"], ["a", "b", "c", "d", "e"]);
+        const kt = new Array(["a", "b", "c", "d", "e"], ["a", "b", "c", "d", "e"], ["b","d"], ["a"], ["a", "b", "e"], ["b", "c", "d"], ["a", "c"], ["h"], ["a", "b", "c", "d", "e"]);
+
         // orgsAnswers[3] = Campus Activities Board
         const cab = new Array(["a", "b", "c", "d", "e"], ["a", "b", "c", "d", "e"], ["a", "b"], ["a"], ["b", "d", "e", "f"], ["c", "d"], ["b", "e", "f"], ['e'], ["a", "b", "c"]);
+
         //orgsAnswers[4] = Knights of the Connection
-        const kotc = new Array(["a", "b", "c", "d", "e"], ["a", "b", "c", "d", "e"], ["a", "b"], ["a", "b", "f"], ["a", "c", "d"], ["b", "d"], ["f", "i"], ["b", "c"]);
+        const kotc = new Array(["a"],["a", "b", "c", "d", "e"], ["a", "b", "c", "d", "e"], ["a", "b"], ["a", "b", "f"], ["a", "c", "d"], ["b", "d"], ["f", "i"], ["b", "c"]);
+
         //orgsAnswers[5] = Volunteer UCF
         const vucf = new Array(["a"], ["a", "b", "c", "d", "e"], ["b", "c"], ["a", "b"], ["b", "e", "f"], ["a", "c", "d"], ["b", "e", "f"], ["a", "f", "i"], ["b", "e"]);
+
         //orgsAnswers[6] = Student Engagement
         const se = new Array(["a", "b", "c", "d", "e"], ["a", "b", "c", "d", "e"], ["c"], ["a", "b"], ["b", "e", "f"], ["a", "c", "d"], ["b", "e", "f"], ["a", "f", "i"], ["b", "e"]);
+
         //orgsAnswers[7] = Homecoming
         const hc = new Array(["a", "b", "c", "d", "e"], ["a", "b", "c", "d", "e"], ["b"], ["a"], ["a", "b", "c", "d", "e", "f"], ["b", "c", "d"], ["b", "c"], ["i"], ["a", "b", "c", "d", "e"]);
+
         //orgsAnswers[8] = Rosen Life
-        const rl = new Array(["a", "b", "c", "d", "e"], ["a", "b", "c", "d", "e"], ["a"], ["a"], ["a", "b", "c", "d", "e", "f"], ["b", "c", "d"], ["b", "c"], ["g"], ["a", "b", "c", "d", "e"]); //orgsAnswers[9] = OSI Productions
+        const rl = new Array(["a", "b", "c", "d", "e"], ["a", "b", "c", "d", "e"], ["a"], ["a"], ["a", "b", "c", "d", "e", "f"], ["b", "c", "d"], ["b", "c"], ["g"], ["a", "b", "c", "d", "e"]); 
+        
         //orgsAnswers[9] = OSI Productions
         const prod = new Array(["b"], ["a"], ["b", "c"], ["a"], ["a", "c", "d"], ["b", "c", "d"], ["e", "f"], ["b", "c", "d"], ["a", "b", "c", "d", "e"]);
+
         //orgsAnswers[10] = Knights of the Turntables
         const kott = new Array(["a", "b", "c", "d", "e"], ["a", "b", "c", "d", "e", "f"], ["a", "b", "c"], ["a"], ["a", "b", "d"], ["b", "c", "d"], ["e", "f"], ["b"], ["a", "b", "c", "d", "e"]);
+
         //orgsAnswers[11] = Black & Gold Studios
         const bng = new Array(["a", "b", "c", "d", "e"], ["a", "b", "c", "d", "e", "f"], ["a", "b"], ["a", "b"], ["a", "c", "d", "f"], ["a", "c", "d"], ["e", "f"], ["b", "c", "d"], ["a", "b", "c", "d", "e"]);
+        
         //orgsAnswers[12] = Graduate Outreach
         const go = new Array(["a", "b", "c", "d", "e"], ["a", "b", "c", "d", "e", "f"], ["b"], ["b"], ["a", "b", "c", "d", "e", "f"], ["a", "b", "c", "d"], ["a", "b", "c", "d", "e", "f"], ["a", "b", "c", "d", "e", "f", "h", "i"], ["a", "b", "c", "d", "e"]);
+
         //orgsAnswers[13] = Design Group
-        const dg = new Array(["a", "b", "c", "d", "e"], ["a", "b", "c", "d", "e", "f"], ["c", "e"], ["c", "f"]);
+        const dg = new Array(["a", "b", "c", "d", "e"], ["a", "b", "c", "d", "e", "f"], ["b", "c"], ["a"], ["a","c", "d","f"],["a","b","c"],["b","e","f"],["a"],["a"]);
 
         //add them all into one master array
-        const orgsAnswers = new Array(lk, kort, kt, cab, kotc, vucf, se, hc, rl, prod, kott, bng, go, dg)
-
+        const orgsAnswers = new Array(lk, kort, kt, cab, kotc, vucf, se, hc, rl, prod, kott, bng, go, dg);
+        console.log(orgsAnswers)
         const userChoices = this._tallyResponses();
 
         let finalPoints = new Array(ORGINFO.length).fill(0);
@@ -239,13 +252,15 @@ var Quiz = function () {
         $(".jumbotron").each(function () {
             jumboList.push($(this));
         });
-
+        console.log(jumboList)
         $(".quiz-choice").on("click", function () {
+            console.log(self._isComplete());
             let $choice = $(this);
             let $question = $choice.closest("ul[data-quiz-question]");
             self._selectAnswer($choice, $question);
             if (self._isComplete()) {
                 self._showResult();
+                console.log(self._showResult())
                 return;
             }
             //Animated scroll to next Jumbotron element
