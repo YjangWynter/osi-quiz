@@ -20,13 +20,20 @@ ul {
     list-style: none;
 }
 .result {
-    color: #fff;
+    color:#fff ;
+}
+.result h4{
+    color: #ffc904;
 }
 .result a{
-   color: #fff;
+   color:#000 ;
+}
+.result a:hover{
+    color:#000 ;
+    opacity: 0.7;
 }
 .resultComplete {
-   background: #95200f; 
+   background: #000; 
 }
 h1 {
     text-align: center;
@@ -51,13 +58,13 @@ h1 {
     width: 33%;
     height: 1em;
     float: left;
-    background-color: #95200f;
+    background-color: rgb(32, 32, 32);
 }
 .bar-2 {
     width: 33%;
     height: 1em;
     float: left;
-    background-color: #012c7b;
+    background-color:#ffc904;
 }
 .bar-3 {
     width: 33%;
