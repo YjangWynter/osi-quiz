@@ -127,55 +127,62 @@ var Quiz = function () {
     }
 
     this._calcResult = function () {
+
         // orgsAnswers[0] = Late Knights
         const lk = new Array(["b"], ["a", "b", "c", "d", "e"], ["a", "c"], ["a"], ["a", "c", "f"], ["c", "d"], ["b"], ["g"], ["c"]);
 
         // orgsAnswers[1] = Knights of the Round Table
-        const kort = new Array(["a", "b", "c", "d", "e"], ["a", "b", "c", "d", "e"], ["a"], ["b"], ["a", "e", "f"], ["a, c, d"], ["b", "d"], ["f"], ["a", "b", "c", "d", "e"]);
+        const kort = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a"], ["a", "b"], ["a", "e", "f"], ["a", "c", "d"], ["b", "d"], ["f"], ["a", "b", "c", "d", "e"]);
 
         // orgsAnswers[2] = Knight-Thon
-        const kt = new Array(["a", "b", "c", "d", "e"], ["a", "b", "c", "d", "e"], ["a","d"], ["a"], ["a", "b", "e"], ["b", "c", "d"], ["a", "c"], ["h"], ["a", "b", "c", "d", "e"]);
+        const kt = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a"], ["a"], ["a", "b", "e"], ["b", "c", "d"], ["a", "c"], ["h"], ["a", "b", "c", "d", "e"]);
 
         // orgsAnswers[3] = Campus Activities Board
-        const cab = new Array(["a", "b", "c", "d", "e"], ["a", "b", "c", "d", "e"], ["b", "b"], ["a"], ["b", "d", "e", "f"], ["c", "d"], ["b", "e", "f"], ['e'], ["a", "b", "c"]);
+        const cab = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a","b"], ["a"], ["a","b","e"], ["c", "d"], ["b", "e", "f"], ["e","f","i"], ["a", "b", "c"]);
 
         //orgsAnswers[4] = Knights of the Connection
-        const kotc = new Array(["a"],["a", "b", "c", "d", "e"], ["a", "b", "c", "d", "e"], ["a", "b"], ["a", "b", "f"], ["a", "c", "d"], ["b", "d"], ["f", "i"], ["b", "c"]);
+        const kotc = new Array(["a"], ["a", "b", "c", "d", "e"], ["a", "b", "c", "d"], ["a", "b"], ["a", "b", "f"], ["a", "c", "d"], ["b", "d"], ["f", "i"], ["b", "c"]);
 
         //orgsAnswers[5] = Volunteer UCF
-        const vucf = new Array(["a"], ["a", "b", "c", "d", "e"], ["a", "c"], ["a", "b"], ["b", "e", "f"], ["a", "c", "d"], ["b", "e", "f"], ["a", "f", "i"], ["b", "e"]);
+        const vucf = new Array(["a"], ["a", "b", "c", "d", "e"], ["a", "c"], ["a", "b"], ["a", "b", "e", "f"], ["a", "c", "d"], ["a", "b", "c"], ["f", "g", "h", "i"], ["a", "b", "e"]);
 
         //orgsAnswers[6] = Student Engagement
-        const se = new Array(["a", "b", "c", "d", "e"], ["a", "b", "c", "d", "e"], ["c"], ["a", "b"], ["b", "e", "f"], ["a", "c", "d"], ["b", "e", "f"], ["a", "f", "i"], ["b", "e"]);
+        const se = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["c"], ["a", "b"], ["b", "e", "f"], ["a", "c", "d"], ["b", "e", "f"], ["a", "f", "i"], ["b", "e"]);
 
         //orgsAnswers[7] = Homecoming
-        const hc = new Array(["a", "b", "c", "d", "e"], ["a", "b", "c", "d", "e"], ["a"], ["a"], ["a", "b", "c", "d", "e", "f"], ["b", "c", "d"], ["b", "c"], ["i"], ["a", "b", "c", "d", "e"]);
+        const hc = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a"], ["a"], ["a", "b", "c", "d", "e", "f"], ["b", "c", "d"], ["b", "c"], ["i"], ["a", "b", "c", "d", "e"]);
 
         //orgsAnswers[8] = Rosen Life
-        const rl = new Array(["a", "b", "c", "d", "e"], ["a", "b", "c", "d", "e"], ["b"], ["a"], ["a", "b", "c", "d", "e", "f"], ["b", "c", "d"], ["b", "c"], ["g"], ["a", "b", "c", "d", "e"]); 
-        
+        const rl = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a", "b"], ["a"], ["a", "b", "c", "d", "e", "f"], ["b", "c", "d"], ["b", "c"], ["g"], ["a", "b", "c", "d", "e"]);
+
         //orgsAnswers[9] = OSI Productions
-        const prod = new Array(["b"], ["a"], ["a", "c"], ["a"], ["a", "c", "d"], ["b", "c", "d"], ["e", "f"], ["b", "c", "d"], ["a", "b", "c", "d", "e"]);
+        const prod = new Array(["b"], ["a", "b", "c", "d", "e"], ["a", "c"], ["a"], ["a", "c", "d"], ["b", "c", "d"], ["e", "f"], ["b", "c", "d"], ["a", "b", "c", "d", "e"]);
 
         //orgsAnswers[10] = Knights of the Turntables
-        const kott = new Array(["a", "b", "c", "d", "e"], ["a", "b", "c", "d", "e", "f"], ["a", "b", "c"], ["a"], ["a", "b", "d"], ["b", "c", "d"], ["e", "f"], ["b"], ["a", "b", "c", "d", "e"]);
+        const kott = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a", "b", "c"], ["a"], ["a", "b", "d"], ["b", "c", "d"], ["e", "f"], ["b"], ["a", "b", "c", "d", "e"]);
 
         //orgsAnswers[11] = Black & Gold Studios
-        const bng = new Array(["a", "b", "c", "d", "e"], ["a", "b", "c", "d", "e", "f"], ["a", "b"], ["a", "b"], ["a", "c", "d", "f"], ["a", "c", "d"], ["e", "f"], ["b", "c", "d"], ["a", "b", "c", "d", "e"]);
-        
+        const bng = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a"], ["a", "b"], [ "c", "d", "f"], ["a", "c"], ["e", "f"], ["b"], ["a", "b", "c", "d", "e"]);
+
         //orgsAnswers[12] = Graduate Outreach
-        const go = new Array(["a", "b", "c", "d", "e"], ["a", "b", "c", "d", "e", "f"], ["a"], ["b"], ["a", "b", "c", "d", "e", "f"], ["a", "b", "c", "d"], ["a", "b", "c", "d", "e", "f"], ["a", "b", "c", "d", "e", "f", "h", "i"], ["a", "b", "c", "d", "e"]);
+        const go = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a"], ["b"], ["a", "b", "c", "d", "e", "f"], ["a", "b", "c", "d"], ["a", "b", "c", "d", "e", "f"], ["a", "b", "c", "d", "e", "f", "h", "i"], ["a", "b", "c", "d", "e"]);
 
         //orgsAnswers[13] = Design Group
-        const dg = new Array(["a", "b", "c", "d", "e"], ["a", "b", "c", "d", "e", "f"], ["a", "c"], ["a"], ["a","c", "d","f"],["a","b","c"],["b","e","f"],["a"],["a"]);
+        const dg = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a", "c"], ["a"], ["c", "d", "f"], ["a", "c"], ["b", "e", "f"], ["a"], ["a"]);
 
         //add them all into one master array
         const orgsAnswers = new Array(lk, kort, kt, cab, kotc, vucf, se, hc, rl, prod, kott, bng, go, dg);
         console.log(orgsAnswers)
         const userChoices = this._tallyResponses();
 
+        //Create an empty array to populate with 0
         let finalPoints = new Array(ORGINFO.length).fill(0);
-
+        let gradPoints = new Array(ORGINFO.length).fill(0);
+        //end the end of the for loop:
+        // shuffle an array and check from the end of the array
+        //set j as a random number between the range of the start and the selected end point of the array
+        //set x to the value of i, then the value of i to the random selected point of j in the array's value
+        //then set j to x, which is the value of i 
         function shuffle(a) {
             var j, x, i;
             for (i = a.length - 1; i > 0; i--) {
@@ -187,14 +194,33 @@ var Quiz = function () {
             return a;
         }
 
-        function addPoints(choice, j) {
+        //returns a boolean value to see if the student is a graduate
+        //answer should equal a string defined by the user
+        //Choices should be the array of options given to the user in question 4
+        function gradCheck(answer, choices) {
+            if (choices.includes("b") && answer === choices) {
+                 return true;
+            }
+            return false;
+        }
+
+
+        // this function checks if the user's choice == to value of an organization's answer
+        function addPoints(answer, j) {
+            
             for (var i = 0; i < orgsAnswers.length; i++) {
-                if (orgsAnswers[i][j].includes(choice)) {
-                    finalPoints[i]++;
+                if (orgsAnswers[i][j].includes(answer)) {
+                    //check if user selected graduate for question 4
+                    console.log(gradCheck(answer, orgsAnswers[i][4]) + "\r\n")
+                    if (gradCheck(answer, orgsAnswers[i][4]) === true) {
+                        ++gradPoints[i]; 
+                    } else{
+                        ++finalPoints[i];
+                    }
                 }
             }
         }
-
+        //this function creates a randomized list of responses with the the most amount of points that are equal
         function shuffledMatchList(a) {
             var i = 0,
                 maxList = new Array(),
@@ -214,9 +240,17 @@ var Quiz = function () {
 
             return shuffle(maxList);
         }
+        //check gradPoints to find if there is a graduate taking the quiz, returns if there is at least 1
+        const findGrads = (arr) =>(arr.filter(x => x > 0) > 2) 
 
+        
         userChoices.forEach(addPoints);
-        console.log(shuffledMatchList(finalPoints));
+        console.log(findGrads(gradPoints))
+        //checks if the gradPoints array has a grad in the user selection: Will return GO and maybe BnG 
+        if(findGrads(gradPoints) === true){ 
+            return shuffledMatchList(gradPoints);
+        }
+        
         return shuffledMatchList(finalPoints);
     }
 
@@ -227,20 +261,20 @@ var Quiz = function () {
 
 
         $resultBox.addClass("resultComplete jumbotron");
-        $resultBox.html("<h1 class='mb-4'><p>Here is your result!</p> <p>You matched with <i>"+ORGINFO[resultList[0]].name+'</i></p> </h1> <p>'+ORGINFO[resultList[0]].info+'</p><p class="text-center"><a class="my-3 mx-auto btn btn-warning btn-lg" href="'+ORGINFO[resultList[0]].link+'"target="_blank"><strong>Visit Website</strong></a></p>');
+        $resultBox.html("<h1 class='mb-4'><p>Here is your result!</p> <p>You matched with <i>" + ORGINFO[resultList[0]].name + '</i></p> </h1> <p>' + ORGINFO[resultList[0]].info + '</p><p class="text-center"><a class="my-3 mx-auto btn btn-warning btn-lg" href="' + ORGINFO[resultList[0]].link + '"target="_blank"><strong>Visit Website</strong></a></p>');
 
         const resultToString = () => {
             var myStr = '';
             for (let i = 1; i < resultList.length; i++) {
-                myStr += '<li ><a class="collapsed" href="#collapseInfo-'+i+'"data-toggle="collapse" role="button" aria-expanded="false" id="info-'+i+'"><h4><strong><u>'+ORGINFO[resultList[i]].name+'</u></strong></h4></a></li><p class="collapse text-center" id="collapseInfo-'+i+'">'+ORGINFO[resultList[i]].info+'<br><a class ="btn btn-warning btn-lg my-3 mx-auto text-center" href="'+ORGINFO[resultList[i]].link+'" target="_blank"><strong>Visit Website</strong></a></p>';
+                myStr += '<li ><a class="collapsed" href="#collapseInfo-' + i + '"data-toggle="collapse" role="button" aria-expanded="false" id="info-' + i + '"><h4><strong><u>' + ORGINFO[resultList[i]].name + '</u></strong></h4></a></li><p class="collapse text-center" id="collapseInfo-' + i + '">' + ORGINFO[resultList[i]].info + '<br><a class ="btn btn-warning btn-lg my-3 mx-auto text-center" href="' + ORGINFO[resultList[i]].link + '" target="_blank"><strong>Visit Website</strong></a></p>';
 
             }
             return myStr;
         }
         if (resultList.length > 1) {
-            $resultBox.append('<hr class="my-4"><h2><strong> You also matched with:</strong></h2> <ul id="accordion">'+resultToString()+'</ul><br>');
+            $resultBox.append('<hr class="my-4"><h2><strong> You also matched with:</strong></h2> <ul id="accordion">' + resultToString() + '</ul><br>');
         }
-        $resultBox.append('<hr class="my-4"><p class="text-center">Schedule a consultation with KnightQuest to learn more about your program and many others. Be sure to screenshot your result!</p><p class="text-center"><a class="btn btn-warning btn-lg" href="mailto:kortoutreach@ucf.edu?subject=Schedule KnightQuest Appointment&body=I got '+ORGINFO[resultList[0]].name+' as my result from the OSI Quiz. Could I schedule an appointment to learn more about it and my other options to get involved at UCF?"><strong>Schedule Consultation</strong></a></p>');
+        $resultBox.append('<hr class="my-4"><p class="text-center">Schedule a consultation with KnightQuest to learn more about your program and many others. Be sure to screenshot your result!</p><p class="text-center"><a class="btn btn-warning btn-lg" href="mailto:kortoutreach@ucf.edu?subject=Schedule KnightQuest Appointment&body=I got ' + ORGINFO[resultList[0]].name + ' as my result from the OSI Quiz. Could I schedule an appointment to learn more about it and my other options to get involved at UCF?"><strong>Schedule Consultation</strong></a></p>');
         //Animated scroll
         $("body, html").animate({
             scrollTop: (($resultBox).offset().top - 25) //25px for visual padding
@@ -252,9 +286,9 @@ var Quiz = function () {
         $(".jumbotron").each(function () {
             jumboList.push($(this));
         });
-        console.log(jumboList)
+       // console.log(jumboList)
         $(".quiz-choice").on("click", function () {
-            console.log(self._isComplete());
+           // console.log(self._isComplete());
             let $choice = $(this);
             let $question = $choice.closest("ul[data-quiz-question]");
             self._selectAnswer($choice, $question);
