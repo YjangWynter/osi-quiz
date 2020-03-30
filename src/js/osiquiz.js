@@ -138,7 +138,7 @@ var Quiz = function () {
         const kt = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a"], ["a"], ["a", "b", "e"], ["b", "c", "d"], ["a", "c"], ["h"], ["a", "b", "c", "d", "e"]);
 
         // orgsAnswers[3] = Campus Activities Board
-        const cab = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a","b"], ["a"], ["a","b","e"], ["c", "d"], ["b", "e", "f"], ["e","f","i"], ["a", "b", "c"]);
+        const cab = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a", "b"], ["a"], ["a", "b", "e"], ["c", "d"], ["b", "e", "f"], ["e", "f", "i"], ["a", "b", "c"]);
 
         //orgsAnswers[4] = Knights of the Connection
         const kotc = new Array(["a"], ["a", "b", "c", "d", "e"], ["a", "b", "c", "d"], ["a", "b"], ["a", "b", "f"], ["a", "c", "d"], ["b", "d"], ["f", "i"], ["b", "c"]);
@@ -162,7 +162,7 @@ var Quiz = function () {
         const kott = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a", "b", "c"], ["a"], ["a", "b", "d"], ["b", "c", "d"], ["e", "f"], ["b"], ["a", "b", "c", "d", "e"]);
 
         //orgsAnswers[11] = Black & Gold Studios
-        const bng = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a"], ["a", "b"], [ "c", "d", "f"], ["a", "c"], ["e", "f"], ["b"], ["a", "b", "c", "d", "e"]);
+        const bng = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a"], ["a", "b"], ["c", "d", "f"], ["a", "c"], ["e", "f"], ["b"], ["a", "b", "c", "d", "e"]);
 
         //orgsAnswers[12] = Graduate Outreach
         const go = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a"], ["b"], ["a", "b", "c", "d", "e", "f"], ["a", "b", "c", "d"], ["a", "b", "c", "d", "e", "f"], ["a", "b", "c", "d", "e", "f", "h", "i"], ["a", "b", "c", "d", "e"]);
@@ -171,13 +171,14 @@ var Quiz = function () {
         const dg = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a", "c"], ["a"], ["c", "d", "f"], ["a", "c"], ["b", "e", "f"], ["a"], ["a"]);
 
         //add them all into one master array
+        "use strict"
         const orgsAnswers = new Array(lk, kort, kt, cab, kotc, vucf, se, hc, rl, prod, kott, bng, go, dg);
         console.log(orgsAnswers)
         const userChoices = this._tallyResponses();
 
         //Create an empty array to populate with 0
-        let finalPoints = new Array(ORGINFO.length).fill(0);
-        let gradPoints = new Array(ORGINFO.length).fill(0);
+        var undergradPoints = new Array(orgsAnswers.length).fill(0);
+        var gradPoints = new Array(orgsAnswers.length).fill(0);
         //end the end of the for loop:
         // shuffle an array and check from the end of the array
         //set j as a random number between the range of the start and the selected end point of the array
@@ -195,31 +196,43 @@ var Quiz = function () {
         }
 
         //returns a boolean value to see if the student is a graduate
-        //answer should equal a string defined by the user
-        //Choices should be the array of options given to the user in question 4
-        function gradCheck(answer, choices) {
-            if (choices.includes("b") && answer === choices) {
-                 return true;
+
+        // will return results with anything except b, so only 
+        function getUndergrad(answer, choices) {
+            if(!choices.includes("b") && answer === choices){
+                return true;
             }
             return false;
         }
-
+        //will return only if it includes b in the result and equals the answer
+        function getGraduate(answer, choices) {
+           if(choices.includes("b") && answer === choices){
+               return true;
+           }
+           return
+        }//BUG: will return false if a choice array contains both a & b
 
         // this function checks if the user's choice == to value of an organization's answer
         function addPoints(answer, j) {
-            
+
             for (var i = 0; i < orgsAnswers.length; i++) {
                 if (orgsAnswers[i][j].includes(answer)) {
                     //check if user selected graduate for question 4
-                    console.log(gradCheck(answer, orgsAnswers[i][4]) + "\r\n")
-                    if (gradCheck(answer, orgsAnswers[i][4]) === true) {
-                        ++gradPoints[i]; 
-                    } else{
-                        ++finalPoints[i];
+                    if (getGraduate(answer, orgsAnswers[i][4]) === true) {
+
+                        gradPoints[i]++;  //adds only graduate and undergraduate friendly orgs
+
+                    } else if(getUndergrad(answer, orgsAnswers[i][4]) === true) {
+
+                        undergradPoints[i]++; //adds only undergraduate friendly orgs
                     }
                 }
             }
+            console.log("Graduate Array \n ---------------------- \n" + gradPoints)
+            console.log("Undergraduate Array \n ---------------------- \n" + undergradPoints)
+
         }
+
         //this function creates a randomized list of responses with the the most amount of points that are equal
         function shuffledMatchList(a) {
             var i = 0,
@@ -240,18 +253,22 @@ var Quiz = function () {
 
             return shuffle(maxList);
         }
-        //check gradPoints to find if there is a graduate taking the quiz, returns if there is at least 1
-        const findGrads = (arr) =>(arr.filter(x => x > 0) > 2) 
-
+        //check gradPoints to find if there is a graduate taking the quiz, returns an array of values if there is at least 1
+        const findGrads = (arr) => arr.find((element) => element >= 1) > 0 ? true : false;
+        console.log("Graduate Array \n ---------------------- \n" + gradPoints)
+        console.log("Undergraduate Array \n ---------------------- \n" + undergradPoints)
         
+
+
         userChoices.forEach(addPoints);
         console.log(findGrads(gradPoints))
         //checks if the gradPoints array has a grad in the user selection: Will return GO and maybe BnG 
-        if(findGrads(gradPoints) === true){ 
+        if (findGrads(gradPoints) === true) {
             return shuffledMatchList(gradPoints);
         }
-        
-        return shuffledMatchList(finalPoints);
+        //sets graduate outreach to 0 since user is not a graduate
+
+        return shuffledMatchList(undergradPoints);
     }
 
     this._showResult = function () {
@@ -286,9 +303,9 @@ var Quiz = function () {
         $(".jumbotron").each(function () {
             jumboList.push($(this));
         });
-       // console.log(jumboList)
+        // console.log(jumboList)
         $(".quiz-choice").on("click", function () {
-           // console.log(self._isComplete());
+            // console.log(self._isComplete());
             let $choice = $(this);
             let $question = $choice.closest("ul[data-quiz-question]");
             self._selectAnswer($choice, $question);
