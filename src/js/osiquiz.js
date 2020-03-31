@@ -171,7 +171,7 @@ var Quiz = function () {
         const dg = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a", "c"], ["a"], ["c", "d", "f"], ["a", "c"], ["b", "e", "f"], ["a"], ["a"]);
 
         //add them all into one master array
-        "use strict"
+
         const orgsAnswers = new Array(lk, kort, kt, cab, kotc, vucf, se, hc, rl, prod, kott, bng, go, dg);
         console.log(orgsAnswers)
         const userChoices = this._tallyResponses();
@@ -199,30 +199,34 @@ var Quiz = function () {
 
         // will return results with anything except b, so only 
         function getUndergrad(answer, choices) {
-            if(!choices.includes("b") && answer === choices){
+            if (answer === 'a' && !choices.includes("b")) {
                 return true;
+            } else {
+                return false;
             }
-            return false;
         }
         //will return only if it includes b in the result and equals the answer
         function getGraduate(answer, choices) {
-           if(choices.includes("b") && answer === choices){
-               return true;
-           }
-           return
-        }//BUG: will return false if a choice array contains both a & b
+            //CAN'T COMPARE an answer to the entire array
+            if (answer === 'b' && choices.includes("b")) {
+                return true;
+            } else {
+                return false;
+            }
+        } //BUG: will return true if a choice array contains both a & b, but the user selects a
 
         // this function checks if the user's choice == to value of an organization's answer
         function addPoints(answer, j) {
 
             for (var i = 0; i < orgsAnswers.length; i++) {
+                console.log(j)
                 if (orgsAnswers[i][j].includes(answer)) {
                     //check if user selected graduate for question 4
                     if (getGraduate(answer, orgsAnswers[i][4]) === true) {
 
-                        gradPoints[i]++;  //adds only graduate and undergraduate friendly orgs
+                        gradPoints[i]++; //adds only graduate and undergraduate friendly orgs
 
-                    } else if(getUndergrad(answer, orgsAnswers[i][4]) === true) {
+                    } else if (getUndergrad(answer, orgsAnswers[i][4]) === true) {
 
                         undergradPoints[i]++; //adds only undergraduate friendly orgs
                     }
@@ -257,7 +261,7 @@ var Quiz = function () {
         const findGrads = (arr) => arr.find((element) => element >= 1) > 0 ? true : false;
         console.log("Graduate Array \n ---------------------- \n" + gradPoints)
         console.log("Undergraduate Array \n ---------------------- \n" + undergradPoints)
-        
+
 
 
         userChoices.forEach(addPoints);
