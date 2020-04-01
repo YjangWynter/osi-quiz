@@ -177,8 +177,7 @@ var Quiz = function () {
         const userChoices = this._tallyResponses();
 
         //Create an empty array to populate with 0
-        var undergradPoints = new Array(orgsAnswers.length).fill(0);
-        var gradPoints = new Array(orgsAnswers.length).fill(0);
+        let finalPoints = new Array(orgsAnswers.length).fill(0);
         //end the end of the for loop:
         // shuffle an array and check from the end of the array
         //set j as a random number between the range of the start and the selected end point of the array
@@ -194,49 +193,6 @@ var Quiz = function () {
             }
             return a;
         }
-
-        //returns a boolean value to see if the student is a graduate
-
-        // will return results with anything except b, so only 
-        function getUndergrad(answer, choices) {
-            if (answer === 'a' && !choices.includes("b")) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-        //will return only if it includes b in the result and equals the answer
-        function getGraduate(answer, choices) {
-            //CAN'T COMPARE an answer to the entire array
-            if (answer === 'b' && choices.includes("b")) {
-                return true;
-            } else {
-                return false;
-            }
-        } //BUG: will return true if a choice array contains both a & b, but the user selects a
-
-        // this function checks if the user's choice == to value of an organization's answer
-        function addPoints(answer, j) {
-
-            for (var i = 0; i < orgsAnswers.length; i++) {
-                console.log(j)
-                if (orgsAnswers[i][j].includes(answer)) {
-                    //check if user selected graduate for question 4
-                    if (getGraduate(answer, orgsAnswers[i][4]) === true) {
-
-                        gradPoints[i]++; //adds only graduate and undergraduate friendly orgs
-
-                    } else if (getUndergrad(answer, orgsAnswers[i][4]) === true) {
-
-                        undergradPoints[i]++; //adds only undergraduate friendly orgs
-                    }
-                }
-            }
-            console.log("Graduate Array \n ---------------------- \n" + gradPoints)
-            console.log("Undergraduate Array \n ---------------------- \n" + undergradPoints)
-
-        }
-
         //this function creates a randomized list of responses with the the most amount of points that are equal
         function shuffledMatchList(a) {
             var i = 0,
@@ -257,23 +213,33 @@ var Quiz = function () {
 
             return shuffle(maxList);
         }
-        //check gradPoints to find if there is a graduate taking the quiz, returns an array of values if there is at least 1
-        const findGrads = (arr) => arr.find((element) => element >= 1) > 0 ? true : false;
-        console.log("Graduate Array \n ---------------------- \n" + gradPoints)
-        console.log("Undergraduate Array \n ---------------------- \n" + undergradPoints)
 
+                // will return results with anything except b, so only 
 
+        // this function checks if the user's choice == to value of an organization's answer
+        function addPoints(answer, j) {
+
+            for (var i = 0; i < orgsAnswers.length; i++) {
+                console.log(j)
+                if (orgsAnswers[i][j].includes(answer)) {
+                    
+                    finalPoints[i]++;
+                    //check if user selected graduate for question 4
+                    orgsAnswers.forEach((question,i) =>{
+                        if(!question[3].includes(userChoices[3])){
+                            //entirely removes undergraduate or graduate type responses from appearing
+                            finalPoints[i] = -1;
+                        }
+                    });
+
+                }
+            }
+        }
 
         userChoices.forEach(addPoints);
-        console.log(findGrads(gradPoints))
-        //checks if the gradPoints array has a grad in the user selection: Will return GO and maybe BnG 
-        if (findGrads(gradPoints) === true) {
-            return shuffledMatchList(gradPoints);
+        return shuffledMatchList(finalPoints);
         }
-        //sets graduate outreach to 0 since user is not a graduate
-
-        return shuffledMatchList(undergradPoints);
-    }
+    
 
     this._showResult = function () {
         let $resultBox = $(".result");
