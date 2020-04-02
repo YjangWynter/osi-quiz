@@ -10,25 +10,25 @@ const ORGINFO = [
 
     {
         name: "Knights of the Round Table",
-        info: "Knight-Thon is the largest student-run philanthropy benefiting the Children’s Miracle Network. Each year participants work all year to raise money in anticipation of the 24 hour Dance Marathon that takes place in the Spring semester.",
+        info: "Knights of the Round Table is an administrative resource to all student organizations and an advisory council to all students pursuing involvement during their collegiate experience. This includes KnightQuest, a one-on-one consultation service designed to help students find an organization on campus, and registering and assigning cubicle and storage space for RSOs.",
         link: "https://osi.ucf.edu/agencies/kort"
     },
 
     {
         name: "Knight-thon",
-        info: "Agency 3",
+        info: "Knight-Thon, Dance Marathon at the University of Central Florida, benefits Orlando Health Arnold Palmer Hospital for Children. We are UCF’s largest student-driven philanthropy and part of the national Miracle Network Dance Marathon movement. Knight-Thon is a yearlong effort in which we raise funds and awareness for our local kids, leading up to our 20-hour celebration in the spring. Last year, our campus joined together to raise over $1.288 million!",
         link: "https://osi.ucf.edu/agencies/knight-thon"
     },
 
     {
         name: "Campus Activities Board",
-        info: "KotC provides programs, activities, and services to UCF Connect Campuses around the Central Florida area.",
+        info: "CAB is responsible for the planning and execution of various events on the UCF campus. Our events include large-scale concerts and comedy shows, speaking engagements, the Mr. and Miss UCF Scholarship Pageants, movie screenings, and much more!",
         link: "https://osi.ucf.edu/agencies/cab"
     },
 
     {
         name: "Knights of the Connection",
-        info: "Agency 5",
+        info: "KOTC focuses on serving as a bridge between connection campuses to the Orlando campus. It is dedicated to helping students “Get Involved” while providing quality programs and services at each of UCF’s connector campuses",
         link: "https://osi.ucf.edu/agencies/kotc"
     },
 
@@ -83,7 +83,7 @@ const ORGINFO = [
 
     {
         name: "Design Group",
-        info: "Design Group is a team of students that create graphics, illustrations, and promotional material for the Office of Student Involvement.",
+        info: "Design Group is the team of students that create graphics, illustrations, and promotional material for the Office of Student Involvement. We also handle web design and development for OSI, Student Government, and includes building fun projects like this quiz you just played. :D",
         link: "https://osi.ucf.edu/agencies/design-group"
     },
 
@@ -125,6 +125,7 @@ var Quiz = function () {
         });
         return choiceList;
     }
+    // Answer Key
 
     this._calcResult = function () {
 
