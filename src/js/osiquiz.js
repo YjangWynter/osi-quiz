@@ -83,7 +83,7 @@ const ORGINFO = [
 
     {
         name: "Design Group",
-        info: "Design Group is the team of students that create graphics, illustrations, and promotional material for the Office of Student Involvement. We also handle web design and development for OSI, Student Government, and includes building fun projects like this quiz you just played. :D",
+        info: "Design Group is the team of students that create graphics, illustrations, and promotional material for the Office of Student Involvement. We also handle web design and development for OSI, Student Government, and other organizations. This includes building fun projects like this quiz you just played. :D",
         link: "https://osi.ucf.edu/agencies/design-group"
     },
 
