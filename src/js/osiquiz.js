@@ -174,7 +174,7 @@ var Quiz = function () {
         //add them all into one master array
 
         const orgsAnswers = new Array(lk, kort, kt, cab, kotc, vucf, se, hc, rl, prod, kott, bng, go, dg);
-        console.log(orgsAnswers)
+        
         const userChoices = this._tallyResponses();
 
         //Create an empty array to populate with 0
@@ -221,7 +221,7 @@ var Quiz = function () {
         function addPoints(answer, j) {
 
             for (var i = 0; i < orgsAnswers.length; i++) {
-                console.log(j)
+                
                 if (orgsAnswers[i][j].includes(answer)) {
                     
                     finalPoints[i]++;
@@ -244,8 +244,14 @@ var Quiz = function () {
 
     this._showResult = function () {
         let $resultBox = $(".result");
-        console.log($resultBox)
+       
+
+
+        
         let resultList = self._calcResult();
+                // array of objects lists all the organization's that were selected
+        let results = new Array();
+        results.push(ORGINFO[resultList[0]]);
 
 
         $resultBox.addClass("resultComplete jumbotron");
@@ -256,13 +262,48 @@ var Quiz = function () {
             for (let i = 1; i < resultList.length; i++) {
                 myStr += '<li ><a class="collapsed" href="#collapseInfo-' + i + '"data-toggle="collapse" role="button" aria-expanded="false" id="info-' + i + '"><h4><strong><u>' + ORGINFO[resultList[i]].name + '</u></strong></h4></a></li><p class="collapse text-center" id="collapseInfo-' + i + '">' + ORGINFO[resultList[i]].info + '<br><a class ="btn btn-warning btn-lg my-3 mx-auto text-center" href="' + ORGINFO[resultList[i]].link + '" target="_blank"><strong>Visit Website</strong></a></p>';
 
+                //add objects to results array
+                results.push(ORGINFO[resultList[i]]);
             }
             return myStr;
         }
+        // Create an object that has two keys: mail, array of objects
+        //results.join(',');       
+
         if (resultList.length > 1) {
             $resultBox.append('<hr class="my-4"><h2><strong> You also matched with:</strong></h2> <ul id="accordion">' + resultToString() + '</ul><br>');
         }
+        $resultBox.append('<hr class="my-4"><form class="text-center form-inline form-row align-items-center form-group-lg input-group input-group-md" name="user-mail" id="mail-form"> <input class="form-control input-lg " aria-label="User email input" type="email" name="email" id="mail" placeholder="Enter email for copy of results"><button class="btn btn-warning btn-md ml-2 font-weight-bold" id="submit" type="submit">Send Results</button></form>');
         $resultBox.append('<hr class="my-4"><p class="text-center">Schedule a consultation with KnightQuest to learn more about your program and many others. Be sure to screenshot your result!</p><p class="text-center"><a class="btn btn-warning btn-lg" href="mailto:kortoutreach@ucf.edu?subject=Schedule KnightQuest Appointment&body=I got ' + ORGINFO[resultList[0]].name + ' as my result from the OSI Quiz. Could I schedule an appointment to learn more about it and my other options to get involved at UCF?"><strong>Schedule Consultation</strong></a></p>');
+        
+        //Event Listener to check if mail-form has been filled
+        if (document.body.contains(document.getElementById("mail-form"))){
+            
+            let form  = document.getElementById("mail-form");
+            form.addEventListener("submit",function(e){
+                
+                //sets mail to the input of user
+                let mail = document.querySelector("#mail").value;
+                
+                //create object
+                let user = {
+                    'email' : mail,
+                    'results': results
+                };
+
+                let json = JSON.stringify(user);
+                //Insert location of the php file here
+                $.post('../osi-quiz/php/mail.php',{ data: json},(response)=>{
+                    alert(response);
+                    console.log(response);
+                });
+               e.preventDefault();
+                
+                
+            },/* Allow Bubbling Propagation */ false);
+        } else {
+            console.log("Doesn't recognize event")
+        }
         //Animated scroll
         $("body, html").animate({
             scrollTop: (($resultBox).offset().top - 25) //25px for visual padding
@@ -282,7 +323,7 @@ var Quiz = function () {
             self._selectAnswer($choice, $question);
             if (self._isComplete()) {
                 self._showResult();
-                console.log(self._showResult())
+                //console.log(self._showResult())
                 return;
             }
             //Animated scroll to next Jumbotron element
