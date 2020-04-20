@@ -5,3 +5,4 @@ yjang-workspace-vscode.code-workspace
 node_modules
 tailwindcss
 /css/vendor
+/php/osiquiz-mail.php

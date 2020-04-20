@@ -130,46 +130,46 @@ var Quiz = function () {
     this._calcResult = function () {
 
         // orgsAnswers[0] = Late Knights
-        const lk = new Array(["b"], ["a", "b", "c", "d", "e"], ["a", "c"], ["a"], ["a", "c", "f"], ["c", "d"], ["b"], ["g"], ["c"]);
+        const lk = new Array(["b","b"], ["a", "b", "c", "d", "e"], ["a", "c"], ["a"], ["a", "c","f"], ["c", "d"], ["b"], ["g","g","g"], ["c","c","c"]);
 
         // orgsAnswers[1] = Knights of the Round Table
-        const kort = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a"], ["a", "b"], ["a", "e", "f"], ["a", "c", "d"], ["b", "d"], ["f"], ["a", "b", "c", "d", "e"]);
+        const kort = new Array(["a","b"], ["a", "b", "c", "d", "e"], ["a"], ["b"], ["a", "e", "f"], ["a","c", "d"], ["b", "d"], ["f","f","f"], ["a", "b", "c", "d", "e"]);
 
         // orgsAnswers[2] = Knight-Thon
-        const kt = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a"], ["a"], ["a", "b", "e"], ["b", "c", "d"], ["a", "c"], ["h"], ["a", "b", "c", "d", "e"]);
+        const kt = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a","d"], ["a"], [ "a","b","e"], ["b","c","d"], ["a", "c","c","c"], ["h","h","h"], ["a", "b", "c", "d", "e"]);
 
         // orgsAnswers[3] = Campus Activities Board
-        const cab = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a", "b"], ["a"], ["a", "b", "e"], ["c", "d"], ["b", "e", "f"], ["e", "f", "i"], ["a", "b", "c"]);
+        const cab = new Array(["a","b"], ["a", "b", "c", "d", "e"], ["a","b"], ["a"], ["b","d", "e","f"], ["c","d"], ["b", "b", "b", "e", "f"], ["e","e","e"], ["a", "b","c"]);
 
         //orgsAnswers[4] = Knights of the Connection
-        const kotc = new Array(["a"], ["a", "b", "c", "d", "e"], ["a", "b", "c", "d"], ["a", "b"], ["a", "b", "f"], ["a", "c", "d"], ["b", "d"], ["f", "i"], ["b", "c"]);
-
+        const kotc = new Array(["a","b"], ["a", "b", "c", "d", "e"], ["d","d","d"], ["a", "a", "a","b","b","b"], [ "a","b", "f"], ["a", "c", "d"], ["b","d"], ["f","i"], ["b","c"]);
+        
         //orgsAnswers[5] = Volunteer UCF
-        const vucf = new Array(["a"], ["a", "b", "c", "d", "e"], ["a", "c"], ["a", "b"], ["a", "b", "e", "f"], ["a", "c", "d"], ["a", "b", "c"], ["f", "g", "h", "i"], ["a", "b", "e"]);
+        const vucf = new Array(["a","a","a"], ["a", "b", "c", "d", "e"], ["a", "c"], ["a", "b"], ["a", "b", "c", "f"], ["a", "b", "c"], ["a", "b","c"], ["h","h","h"], ["e","e","e"]);
 
         //orgsAnswers[6] = Student Engagement
-        const se = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["c"], ["a", "b"], ["b", "e", "f"], ["a", "c", "d"], ["b", "e", "f"], ["a", "f", "i"], ["b", "e"]);
+        const se = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["c","c","c"], ["a","a", "a","b", "b","b"], ["b", "e","f"], ["a", "c", "d"], ["b", "e", "f"], ["a", "f", "i"], ["b", "e"]);
 
         //orgsAnswers[7] = Homecoming
-        const hc = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a"], ["a"], ["a", "b", "c", "d", "e", "f"], ["b", "c", "d"], ["b", "c"], ["i"], ["a", "b", "c", "d", "e"]);
+        const hc = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a"], ["a"], ["a", "b", "c", "d", "e", "f"], ["b", "c", "d"], ["b","e"], ["i","i","i"], ["a", "b", "c", "d", "e"]);
 
         //orgsAnswers[8] = Rosen Life
-        const rl = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a", "b"], ["a"], ["a", "b", "c", "d", "e", "f"], ["b", "c", "d"], ["b", "c"], ["g"], ["a", "b", "c", "d", "e"]);
+        const rl = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a", "b","b","b"], ["a","a"], ["a", "b", "c", "d", "e", "f"], ["b","c", "d"], ["b", "e"], ["g"], ["a", "b", "c", "d", "e"]);
 
         //orgsAnswers[9] = OSI Productions
-        const prod = new Array(["b"], ["a", "b", "c", "d", "e"], ["a", "c"], ["a"], ["a", "c", "d"], ["b", "c", "d"], ["e", "f"], ["b", "c", "d"], ["a", "b", "c", "d", "e"]);
+        const prod = new Array(["b","b","b"], ["a"], ["b", "c"], ["a"], ["a", "c", "d"], ["b","c","d"], ["e","f"], ["b", "c", "c","c", "d"], ["a", "b", "c", "d", "e"]);
 
         //orgsAnswers[10] = Knights of the Turntables
-        const kott = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a", "b", "c"], ["a"], ["a", "b", "d"], ["b", "c", "d"], ["e", "f"], ["b"], ["a", "b", "c", "d", "e"]);
+        const kott = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a","b","c"], ["a"], ["a","b", "d"], ["b", "c", "d"], ["e","f"], ["b","b","b"], ["a", "b", "c", "d", "e"]);
 
         //orgsAnswers[11] = Black & Gold Studios
-        const bng = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a"], ["a", "b"], ["c", "d", "f"], ["a", "c"], ["e", "f"], ["b"], ["a", "b", "c", "d", "e"]);
+        const bng = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a","b"], ["a", "b"], ["a", "c", "d", "f"], ["a", "c", "d"], ["e","f"], ["b","b","b", "c","d"], ["a", "b", "c", "d", "e"]);
 
         //orgsAnswers[12] = Graduate Outreach
-        const go = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a"], ["b"], ["a", "b", "c", "d", "e", "f"], ["a", "b", "c", "d"], ["a", "b", "c", "d", "e", "f"], ["a", "b", "c", "d", "e", "f", "h", "i"], ["a", "b", "c", "d", "e"]);
+        const go = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a"], ["b","b","b"], ["a", "b", "c", "d", "e", "f"], ["a", "b", "c", "d"], ["a", "b", "c", "d", "e", "f"], ["a", "b", "c", "d", "e", "f", "h", "i"], ["a", "b", "c", "d", "e"]);
 
         //orgsAnswers[13] = Design Group
-        const dg = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a", "c"], ["a"], ["c", "d", "f"], ["a", "c"], ["b", "e", "f"], ["a"], ["a"]);
+        const dg = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a","c"], ["a"], ["a","c", "d", "f"], ["a", "b","c"], ["b","e","f"], ["a","a","a"], ["a","a","a"]);
 
         //add them all into one master array
 
@@ -218,28 +218,30 @@ var Quiz = function () {
                 // will return results with anything except b, so only 
 
         // this function checks if the user's choice == to value of an organization's answer
+        // and adds the amount of points for that question to its total
         function addPoints(answer, j) {
 
             for (var i = 0; i < orgsAnswers.length; i++) {
                 
-                if (orgsAnswers[i][j].includes(answer)) {
-                    
-                    finalPoints[i]++;
-                    //check if user selected graduate for question 4
-                    orgsAnswers.forEach((question,i) =>{
-                        if(!question[3].includes(userChoices[3])){
-                            //entirely removes undergraduate or graduate type responses from appearing
-                            finalPoints[i] = -1;
-                        }
-                    });
+               finalPoints[i] +=orgsAnswers[i][j].filter(c => c === answer).length;
 
                 }
+                //WARNING: the Grad Outreach problem is now more exacerbated
+                orgsAnswers.forEach((a,i)=>{
+                    if (!a[3].includes(userChoices[3])){
+                        finalPoints[i] =-1;
+                    }
+                });
+                
             }
-        }
+        
+            userChoices.forEach(addPoints)
+            
+            console.log(finalPoints);
 
-        userChoices.forEach(addPoints);
+        shuffledMatchList(finalPoints);
         return shuffledMatchList(finalPoints);
-        }
+    }
     
 
     this._showResult = function () {
