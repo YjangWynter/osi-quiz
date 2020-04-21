@@ -165,8 +165,8 @@ var Quiz = function () {
         //orgsAnswers[11] = Black & Gold Studios
         const bng = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a","b"], ["a", "b"], ["a", "c", "d", "f"], ["a", "c", "d"], ["e","f"], ["b","b","b", "c","d"], ["a", "b", "c", "d", "e"]);
 
-        //orgsAnswers[12] = Graduate Outreach
-        const go = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a"], ["b","b","b"], ["a", "b", "c", "d", "e", "f"], ["a", "b", "c", "d"], ["a", "b", "c", "d", "e", "f"], ["a", "b", "c", "d", "e", "f", "h", "i"], ["a", "b", "c", "d", "e"]);
+        //orgsAnswers[12] = Graduate Outreach //Had to nerf it by not giving it any extra points.
+        const go = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a"], ["b"], ["a", "b", "c", "d", "e", "f"], ["a", "b", "c", "d"], ["a", "b", "c", "d", "e", "f"], ["a", "b", "c", "d", "e", "f", "h", "i"], ["a", "b", "c", "d", "e"]);
 
         //orgsAnswers[13] = Design Group
         const dg = new Array(["a", "b"], ["a", "b", "c", "d", "e"], ["a","c"], ["a"], ["a","c", "d", "f"], ["a", "b","c"], ["b","e","f"], ["a","a","a"], ["a","a","a"]);
@@ -225,13 +225,7 @@ var Quiz = function () {
                 
                finalPoints[i] +=orgsAnswers[i][j].filter(c => c === answer).length;
 
-                }
-                //WARNING: the Grad Outreach problem is now more exacerbated
-                orgsAnswers.forEach((a,i)=>{
-                    if (!a[3].includes(userChoices[3])){
-                        finalPoints[i] =-1;
-                    }
-                });
+                }     
                 
             }
         
@@ -240,6 +234,12 @@ var Quiz = function () {
             console.log(finalPoints);
 
         shuffledMatchList(finalPoints);
+        orgsAnswers.forEach((a,i)=>{
+            if (!a[3].includes(userChoices[3])){
+                finalPoints[i] =-1;
+            }
+            console.log(finalPoints)
+        });
         return shuffledMatchList(finalPoints);
     }
     
@@ -275,37 +275,9 @@ var Quiz = function () {
         if (resultList.length > 1) {
             $resultBox.append('<hr class="my-4"><h2><strong> You also matched with:</strong></h2> <ul id="accordion">' + resultToString() + '</ul><br>');
         }
-        $resultBox.append('<hr class="my-4"><form class="text-center form-inline form-row align-items-center form-group-lg input-group input-group-md" name="user-mail" id="mail-form"> <input class="form-control input-lg " aria-label="User email input" type="email" name="email" id="mail" placeholder="Enter email for copy of results"><button class="btn btn-warning btn-md ml-2 font-weight-bold" id="submit" type="submit">Send Results</button></form>');
         $resultBox.append('<hr class="my-4"><p class="text-center">Schedule a consultation with KnightQuest to learn more about your program and many others. Be sure to screenshot your result!</p><p class="text-center"><a class="btn btn-warning btn-lg" href="mailto:kortoutreach@ucf.edu?subject=Schedule KnightQuest Appointment&body=I got ' + ORGINFO[resultList[0]].name + ' as my result from the OSI Quiz. Could I schedule an appointment to learn more about it and my other options to get involved at UCF?"><strong>Schedule Consultation</strong></a></p>');
         
-        //Event Listener to check if mail-form has been filled
-        if (document.body.contains(document.getElementById("mail-form"))){
-            
-            let form  = document.getElementById("mail-form");
-            form.addEventListener("submit",function(e){
-                
-                //sets mail to the input of user
-                let mail = document.querySelector("#mail").value;
-                
-                //create object
-                let user = {
-                    'email' : mail,
-                    'results': results
-                };
-
-                let json = JSON.stringify(user);
-                //Insert location of the php file here
-                $.post('../osi-quiz/php/mail.php',{ data: json},(response)=>{
-                    alert(response);
-                    console.log(response);
-                });
-               e.preventDefault();
-                
-                
-            },/* Allow Bubbling Propagation */ false);
-        } else {
-            console.log("Doesn't recognize event")
-        }
+   
         //Animated scroll
         $("body, html").animate({
             scrollTop: (($resultBox).offset().top - 25) //25px for visual padding
